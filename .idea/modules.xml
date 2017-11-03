@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Beside.iml" filepath="$PROJECT_DIR$/Beside.iml" />
-      <module fileurl="file://D:\CloudMail\#StudioProjects\Beside\Beside.iml" filepath="D:\CloudMail\#StudioProjects\Beside\Beside.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:\CloudMail\#StudioProjects\Beside\app\app.iml" filepath="D:\CloudMail\#StudioProjects\Beside\app\app.iml" />
     </modules>
   </component>
 </project>
