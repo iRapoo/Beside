@@ -84,7 +84,7 @@ public class MapsActivity extends AppCompatActivity implements OnMyLocationButto
             mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             mMap.addMarker(new MarkerOptions().position(latlng)
                     .title(getResources().getString(R.string.my)).snippet(getResources().getString(R.string.mySpot))
-                    .icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons("no_photo",100,100))));
+                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.no_photo)));
 
             mMap.setMyLocationEnabled(true);
 
@@ -137,11 +137,4 @@ public class MapsActivity extends AppCompatActivity implements OnMyLocationButto
             mPermissionDenied = false;
         }
     }
-
-    public Bitmap resizeMapIcons(String iconName, int width, int height){
-        Bitmap imageBitmap = BitmapFactory.decodeResource(getResources(),getResources().getIdentifier(iconName, "drawable", getPackageName()));
-        Bitmap resizedBitmap = Bitmap.createScaledBitmap(imageBitmap, width, height, false);
-        return resizedBitmap;
-    }
-
 }
