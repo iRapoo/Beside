@@ -6,8 +6,8 @@ android {
         applicationId "xyz.quenix.beside"
         minSdkVersion 14
         targetSdkVersion 26
-        versionCode 3
-        versionName "0.0.3.f0"
+        versionCode 4
+        versionName "0.0.4.f0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

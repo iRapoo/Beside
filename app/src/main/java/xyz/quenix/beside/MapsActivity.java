@@ -15,6 +15,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -82,7 +84,7 @@ public class MapsActivity extends AppCompatActivity implements OnMyLocationButto
             mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             mMap.addMarker(new MarkerOptions().position(latlng)
                     .title(getResources().getString(R.string.my)).snippet(getResources().getString(R.string.mySpot))
-                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher)));
+                    .icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons("no_photo",100,100))));
 
             mMap.setMyLocationEnabled(true);
 
@@ -136,12 +138,10 @@ public class MapsActivity extends AppCompatActivity implements OnMyLocationButto
         }
     }
 
-    /**
-     * Displays a dialog with error message explaining that the location permission is missing.
-     */
-    /*private void showMissingPermissionError() {
-        PermissionUtils.PermissionDeniedDialog
-                .newInstance(true).show(getSupportFragmentManager(), "dialog");
-    }*/
+    public Bitmap resizeMapIcons(String iconName, int width, int height){
+        Bitmap imageBitmap = BitmapFactory.decodeResource(getResources(),getResources().getIdentifier(iconName, "drawable", getPackageName()));
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(imageBitmap, width, height, false);
+        return resizedBitmap;
+    }
 
 }
