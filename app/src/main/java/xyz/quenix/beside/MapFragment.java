@@ -64,7 +64,7 @@ public class MapFragment extends SupportMapFragment
     @Override
     public void onMapReady(GoogleMap googleMap)
     {
-        mGoogleMap=googleMap;
+        mGoogleMap = googleMap;
         mGoogleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
         //Initialize Google Play Services
@@ -130,7 +130,7 @@ public class MapFragment extends SupportMapFragment
         markerOptions.position(latLng);
         markerOptions.title(getResources().getString(R.string.my));
         markerOptions.snippet(getResources().getString(R.string.mySpot));
-        markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.no_photo));
+        markerOptions.icon(BitmapDescriptorFactory.defaultMarker()); //BitmapDescriptorFactory.fromResource(R.drawable.no_photo)
         mCurrLocationMarker = mGoogleMap.addMarker(markerOptions);
 
         //move map camera

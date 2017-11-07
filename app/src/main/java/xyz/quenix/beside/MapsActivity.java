@@ -1,13 +1,15 @@
 package xyz.quenix.beside;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
 
 public class MapsActivity extends AppCompatActivity  {
 
-    MapFragment mapFragment;
+    public MapFragment mapFragment;
+    public FragmentTransaction transaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,9 +18,10 @@ public class MapsActivity extends AppCompatActivity  {
 
         mapFragment = new MapFragment();
 
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction = getSupportFragmentManager().beginTransaction();
         transaction.add(R.id.map, mapFragment);
         transaction.commit();
+
     }
 
     @Override
